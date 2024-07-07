@@ -1,5 +1,6 @@
 // Uncomment after adding New Relic agent to project
-// const newrelic = require('newrelic');
+require('dotenv').config();
+const newrelic = require('newrelic');
 
 const express = require('express');
 const logger = require('pino')();
