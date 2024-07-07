@@ -64,7 +64,7 @@ exports.start = function(PORT, STATIC_DIR, DATA_FILE, TEST_DIR) {
 
     /*************************************
     /*         Custom attributes         *
-    /*************************************
+    /*************************************/
     var order = req.body;
     var itemCount = 0;
     var orderTotal = 0;
@@ -119,6 +119,7 @@ exports.start = function(PORT, STATIC_DIR, DATA_FILE, TEST_DIR) {
 
   // read the data from json and start the server
   fs.readFile(DATA_FILE, function(err, data) {
+    // console.log(JSON.parse(data.));
     JSON.parse(data).forEach(function(restaurant) {
       storage.add(new RestaurantRecord(restaurant));
     });

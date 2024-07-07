@@ -10,3 +10,5 @@ node_modules/
 newrelic_agent.log
 .env
 newrelic_agent.log
+.env
+newrelic_agent.log
