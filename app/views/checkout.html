@@ -29,9 +29,9 @@
         </div>
         <span class="control-group">
           <input type="text" name="ccExp" placeholder="mm/yyyy" class="input-medium"
-                 maxlength="16"
-                 required ng-pattern="/\d\d\/\d\d\d\d/"
-                 ng-model="cart.payment.expire">
+                maxlength="7"
+                required ng-pattern="/^(0[1-9]|1[0-2])\/\d{4}$/"
+                ng-model="cart.payment.expire">
         </span>
         <span class="control-group">
           <input type="text" name="ccCvc" placeholder="CVC" class="input-small"
