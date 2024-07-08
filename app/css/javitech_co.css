@@ -1,0 +1,24 @@
+.restaurant-grid {
+    width: 90%;
+    max-width: 1200px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+    padding: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    min-width: 170px;
+    max-width: 170px;
+    background-color: white;
+}
+
+.restaurant-card:hover {
+    background-color: #56FF8D;
+    transition: background-color 0.7s ease-in-out;
+}
