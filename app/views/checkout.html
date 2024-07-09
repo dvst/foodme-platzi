@@ -21,19 +21,26 @@
           </select>
         </div>
         <div class="control-group">
+          <!-- Credit Card number field with franchise image -->
+          <div class="control-group">
+            <img src="" id="ccFranchiseImage" style="height: 30px; margin-right: 10px;">
           <input type="text" name="ccNum"
-                 placeholder="Card number"
-                 maxlength="16"
-                 required ng-pattern="/\d{16}/"
-                 ng-model="cart.payment.number">
+            placeholder="Card number"
+            maxlength="16"
+            required ng-pattern="/\d{16}/"
+            ng-model="cart.payment.number"
+            ng-change="updateFranchiseImage(cart.payment.number)">
+          </div>
         </div>
         <span class="control-group">
+          <!-- Credit Card expiration date field -->
           <input type="text" name="ccExp" placeholder="mm/yyyy" class="input-medium"
                 maxlength="7"
                 required ng-pattern="/^(0[1-9]|1[0-2])\/\d{4}$/"
                 ng-model="cart.payment.expire">
         </span>
         <span class="control-group">
+          <!-- Credit Card CVC Code field -->
           <input type="text" name="ccCvc" placeholder="CVC" class="input-small"
                  maxlength="4"
                  required ng-pattern="/\d{3,4}/"

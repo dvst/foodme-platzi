@@ -12,6 +12,13 @@ foodMeApp.controller('CheckoutController',
   $scope.purchase = function() {
     if ($scope.submitting) return;
 
+    // Check if the credit card type is allowed
+    var cardNumber = $scope.cart.payment.number;
+    if (!(cardNumber.startsWith('4') || cardNumber.startsWith('5') || cardNumber.startsWith('6'))) {
+      alert('Only Visa, MasterCard, and Discover cards are accepted. Please use a valid card.');
+      return; // Prevent the purchase from proceeding
+    }
+
     // Check if the expiration date is valid before proceeding
     if (!$scope.isExpirationDateValid()) {
       alert('The expiration date of your credit card is in the past. Please update your payment information.');
@@ -22,6 +29,22 @@ foodMeApp.controller('CheckoutController',
     cart.submitOrder().then(function(orderId) {
       $location.path('thank-you').search({orderId: orderId});
     });
+  };
+
+  $scope.updateFranchiseImage = function(cardNumber) {
+    var src = '';
+    if (cardNumber.startsWith('4')) {
+      src = './img/creditcards-icons/visa.png'; // Update with the correct path to your Visa image
+    } else if (cardNumber.startsWith('5')) {
+      src = './img/creditcards-icons/master.png'; // Update with the correct path to your MasterCard image
+    } else if (cardNumber.startsWith('6')) {
+      src = './img/creditcards-icons/discover.png'; // Path to your Discover image
+    } else {
+      src = './img/creditcards-icons/blocked.png'; // Path to your American Express image
+    }
+
+    var imgElement = document.getElementById('ccFranchiseImage');
+    imgElement.src = src;
   };
 
   $scope.isExpirationDateValid = function() {
