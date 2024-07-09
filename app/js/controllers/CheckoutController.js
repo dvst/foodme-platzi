@@ -46,12 +46,4 @@ foodMeApp.controller('CheckoutController',
     return expiration >= today;
   };
 
- 
-
 });
-
-// add validation for credit card expiration date to be in the future
-// add validation for credit card number to be a valid credit card number
-// add validation for credit card security code to be a valid security code
-
-// 
