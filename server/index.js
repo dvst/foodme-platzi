@@ -1,3 +1,4 @@
+require('../server/tracing'); // Adjust the path to where you placed tracing.js
 // Uncomment after adding New Relic agent to project
 require('dotenv').config();
 const newrelic = require('newrelic');
