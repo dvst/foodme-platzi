@@ -52,7 +52,7 @@
           <th></th>
         </tr>
         <tr ng-repeat="item in cart.items">
-          <td><input type="number" ng-model="item.qty"></td>
+          <td><input type="number" min="0" ng-model="item.qty"></td>
           <td>{{item.name}}</td>
           <td>{{item.price | currency}}</td>
           <td>{{item.price * item.qty | currency}}</td>
