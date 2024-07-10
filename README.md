@@ -1,3 +1,6 @@
+# My presentation of the project in this video 
+[![Project explanation](https://img.youtube.com/vi/YlGbeWYalZI/0.jpg)](https://www.youtube.com/watch?v=YlGbeWYalZI)
+
 # Platzi Challenge - Food Delivery Service App
 
 ## The Task
